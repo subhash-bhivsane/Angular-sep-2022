@@ -1,0 +1,16 @@
+/* h1{
+    text-align: center;
+    background-color: blueviolet;
+    color: white;
+} */
+
+.bd-footer{
+    margin-top: 126%;
+    margin-bottom: 100%;
+    padding-top: 100%;
+}
+.container{
+    background-color: darkgray;
+    padding: 90px;
+    /* margin: 50%; */
+}

@@ -1,0 +1,16 @@
+<table class="table table-success table-striped">
+<thead>
+    <tr>
+        <th>SirNo</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+    </tr>
+</thead>
+<tbody>
+    <tr *ngFor="let emp of employees">
+        <td>{{emp.eId}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.sal}}</td>
+    </tr>
+</tbody>
+</table>

@@ -1,0 +1,90 @@
+<h1>My name is {{name}}</h1>
+<h3>My name is: <span [innerHTML]="name"></span></h3>
+
+<!-- this is simple html img -->
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdY1QR8lhZ0-FGD2Dop5Oyo-Zf1gr4BSVKcQuryljn_BA8atM2sTWp&usqp=CAU"
+    alt="" width="300" height="200">&nbsp;
+
+<!-- this  is one way interpolation binding-->
+<img src="{{plant}}" alt="" width="300" height="200">&nbsp;
+
+<!-- this is one way property binding -->
+<img [src]="plant" alt="" width="300" height="200">&nbsp;
+<img bind-src="plant" alt="" width="300" height="200">
+<br><br>
+<hr>
+<!-- this is simple html property -->
+simple html:<input value="subhash">
+
+<!-- this is one way binding  using interpolation -->
+interpolation binding <input value="{{name}}">
+
+<!-- this is one way binding using property -->
+property binding: <input [value]="name">&nbsp;
+<input bind-value="name">
+<br><br>
+<!-- this is two way binding -->
+<input [(ngModel)]="name">:
+<span>{{name}}</span>
+<br><br>
+<hr>
+<!-- this is two way data binding -->
+addittion of num1 : <input type="number" [(ngModel)]="num1" />&nbsp;
+addittion of num2 : <input type="number" [(ngModel)]="num2" />
+
+<!-- this is one way data binding using interpolation -->
+<div>addition of {{num1}} &nbsp; and &nbsp; {{num2}} &nbsp;&nbsp;&nbsp; is {{num1+num2}}</div>
+<hr>
+<!-- incrementing the value on click event  -->
+<button (click)="increment()">Increment </button> <span> counter value is {{counter}}</span> &nbsp;
+<br>
+<hr>
+<!-- chooose states using two way data binding-->
+<select name="select" id="" placeholder="select the state" [(ngModel)]="selectedState">
+    <option value="Karnataka">Karnataka</option>
+    <option value="kerala">kerala</option>
+    <option value="maharashtra">maharashtra</option>
+    <option value="andhrapradesh">andhrapradesh</option>
+    <option value="telangana">telangana</option>
+</select>
+<p>this is selected state : {{selectedState}}</p>
+<br>
+<hr>
+<!-- this is one way binding using interpolation, property and event binding -->
+<button>Click Me</button>&nbsp;
+<button class=" btn btn-danger" disabled="{{buttons}}">Click Me</button>&nbsp;
+<button class="btn btn-warning" [disabled]="buttons">Click Me</button>&nbsp;
+<button class="btn btn-success" bind-disabled="buttons">Click Me</button>&nbsp;
+<button class="btn btn-primary" (click)="submit('good evening')">Btn-1</button>&nbsp;
+<button class="btn btn-primary" (click)="submit('good evening')">Btn-2</button>
+<br>
+<hr>
+
+<!-- this is hedden property in htm -->
+<h1 [hidden]="showHide" style="color: blueviolet;">Please hide my text </h1>
+<button (click)="toggleParameter()">{{showHide ? "Show" : "Hide"}}</button>
+<br>
+<hr>
+
+<!-- show password in as a text -->
+<input type="password" value="Text">&nbsp;
+<input type="{{showPassword? 'text': 'password'}}" value="Text">&nbsp;
+<input type="checkbox" (change)="showPassword=!showPassword">
+<br>
+<hr>
+
+<div>Calculator</div>
+<p><input type="number" [(ngModel)]="one"></p>
+<p><input type="number" [(ngModel)]="two"></p>
+<div>Addition of {{one}} & {{two}} is = {{one+two}}</div>
+<div>Substraction of {{one}} & {{two}} is = {{one-two}}</div>
+<div>Multiplication of {{one}} & {{two}} is = {{one*two}}</div>
+<div>Division of {{one}} & {{two}} is = {{one/two}}</div>
+<br><hr>
+
+<h1>Template Reference Variable</h1>
+
+Num1: <input type="number" #val1>&nbsp; 
+Num2: <input type="number" ref-val2>&nbsp;
+<button class=" btn btn-primary" (click)="addition(val1.value,val2.value)">Add</button>
+<p style="color:blue">Addition is {{addResult}}</p>

@@ -1,0 +1,21 @@
+<input type="search" [(ngModel)]="searchText" class="mt-2">
+<div class="container">
+    <div class="row">
+        <div *ngFor="let prod of products | paginate: { itemsPerPage: 8, currentPage: p } | filter: searchText" class="col-sm-3 mb-3
+        mt-3">
+            <p>{{prod.category}}</p>
+            <div class="card">
+                <img src="{{prod.image}}" class="card-img-top p-3" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-bold">{{prod.title | limit:20}}</h5>
+                    <p class="card-text fw-bold">{{prod.price | currency:'INR'}}</p>
+                    <p>{{prod.rating.rate}} <span style="font-size:14px">({{prod.rating.count}})</span></p>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-sm" (click)="buyNow()">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<pagination-controls class="text-right" (pageChange)="p = $event"></pagination-controls>

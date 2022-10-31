@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table table-success table-striped">
+        <h3>Employee Details</h3>
+        <div>
+            <thead>
+                <tr>
+                    <th>eId</th>
+                    <th>Emp No.</th>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let emp of employees">
+                    <td>{{emp.eId}}</td>
+                    <td>{{emp.name}}</td>
+                    <td>{{emp.sal}}</td>
+                    <td><button class="btn btn-primary">DEL</button>
+                        <button class="btn btn-primary">EDIT</button>
+                    </td>
+                </tr>
+            </tbody>
+        </div>
+    </table>
+</div>
