@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from './products.service';
 import Swal from 'sweetalert2';
+import { ProductsService } from '../products/products.service';
+
 @Component({
-  selector: 'app-products',
-  templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  selector: 'app-product-list',
+  templateUrl: './product-list.component.html',
+  styleUrls: ['./product-list.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductListComponent implements OnInit {
   products: any = [];
   searchText: any;
   // limit: any;
@@ -34,4 +35,5 @@ export class ProductsComponent implements OnInit {
     }
   });
   }
+
 }

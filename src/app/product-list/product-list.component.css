@@ -1,0 +1,12 @@
+.card-img-top{
+    max-height: 150px;
+    /* padding-left: 30px;
+    padding-right: 30px; */
+}
+.card{
+    max-height: 350px;
+    background-color: #ffebcd;
+}
+.card-title{
+    font-size: 14px;
+}

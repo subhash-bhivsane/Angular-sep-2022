@@ -1,26 +1,80 @@
 <div class="container">
-    <table class="table table-success table-striped">
-        <h3>Employee Details</h3>
-        <div>
-            <thead>
-                <tr>
-                    <th>eId</th>
-                    <th>Emp No.</th>
-                    <th>Employee Name</th>
-                    <th>Salary</th>
-                    <th colspan="2">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let emp of employees">
-                    <td>{{emp.eId}}</td>
-                    <td>{{emp.name}}</td>
-                    <td>{{emp.sal}}</td>
-                    <td><button class="btn btn-primary">DEL</button>
-                        <button class="btn btn-primary">EDIT</button>
-                    </td>
-                </tr>
-            </tbody>
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Employee Details</h3>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr class="text-center">
+                        <th>eId</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                        <th>Salary</th>
+                        <th colspan="3">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let emp of employees">
+                        <td>{{emp.eId}}</td>
+                        <td>{{emp.firstName}}</td>
+                        <td>{{emp.lastName}}</td>
+                        <td>{{emp.email}}</td>
+                        <td>{{emp.sal}}</td>
+                        <td><button class="btn btn-primary">DEL</button>
+                        <td><button class="btn btn-primary">EDIT</button></td>
+                        <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                class="btn btn-primary">VIEW</button></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </table>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-6">
+        <h3 class="text-center">Add Employee Form</h3>
+        <form [formGroup]="addData">
+            <div class="form-group">
+                <label for="eId">EmpId:</label>
+                <input class="form-control" type="text" id="eId" formControlName="eId" placeholder="Enter Your EmpId">
+            </div>
+            <div class="form-group">
+                <label for="firstName">FirstName:</label>
+                <input class="form-control" type="text" id="firstName" formControlName="firstName"
+                    placeholder="Enter Your FirstName">
+            </div>
+            <div class="form-group">
+                <label for="lastName">LastName:</label>
+                <input class="form-control" type="text" id="lastName" formControlName="lastName"
+                    placeholder="Enter Your LastName">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input class="form-control" type="email" id="email" formControlName="email"
+                    placeholder="Enter Your Email">
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-primary">AddEmployee</button>
+            </div>
+
+        </form>
+    </div>
 </div>

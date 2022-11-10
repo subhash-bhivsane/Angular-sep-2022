@@ -18,6 +18,13 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LimitPipe } from './products.ts/limit.pipe';
 import { ProductsComponent } from './products/products.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { CareersComponent } from './careers/careers.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +39,14 @@ import { ProductsComponent } from './products/products.component';
     CarouselComponent,
     ProductsComponent,
     EmployeeCrudComponent,
-    LimitPipe
+    LimitPipe,
+    NotfoundComponent,
+    ProductDetailsComponent,
+    ProductDetailComponent,
+    CareersComponent,
+    ContactUsComponent,
+    AboutUsComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +55,9 @@ import { ProductsComponent } from './products/products.component';
     HttpClientModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    FormsModule,
+    ReactiveFormsModule
 
   ],
   providers: [],
